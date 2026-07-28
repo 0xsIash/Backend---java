@@ -1,4 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a76749ea-5bd9-4f5e-94b3-42a70b3a6c0d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/A. Winter Sale.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A. Winter Sale/src/T_shirt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/B. Memo and Momo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../B. Memo and Momo/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/C. Next Alphabet.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/src/Alphabet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../C. Next Alphabet/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/D. Ali Baba and Puzzles.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../D. Ali Baba and Puzzles/src/Puzzle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/E. Interval Sweep.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interval.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "0xsIash"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/0xsIash/Backend---java.git",
+    "accountId": "acf79a9a-0336-42e5-8f1b-201a3f94807b"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8,
+  "fromUser": false
+}]]></component>
   <component name="ProjectId" id="3Gh9SoDsqBD3X19dywxoE9LQy6K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/Backend - java/Level 1 - Basics/2. OOP/Task 2 - Lecture 5/E. Interval Sweep/src/Main.java"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a76749ea-5bd9-4f5e-94b3-42a70b3a6c0d" name="Changes" comment="" />
+      <created>1784412937112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1784412937112</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
 </project>
