@@ -1,0 +1,75 @@
+package model;
+
+public class User {
+    private String userName;
+    private String password;
+    private String phoneNumber;
+    private double balance;
+    private int age;
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // responsibilities
+
+    public void deposit(double value){
+
+    }
+
+    public void withdraw(double value){
+
+    }
+
+    public void changePassword(String newPassword){
+
+    }
+
+    public void details(){
+
+    }
+
+    public void transfer(double value, String userName){
+
+    }
+
+    public void receive(double value){
+
+    }
+}
