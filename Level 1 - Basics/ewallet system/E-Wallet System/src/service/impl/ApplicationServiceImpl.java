@@ -7,10 +7,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ApplicationServiceImpl implements ApplicationService {
+    Scanner scanner = new Scanner(System.in);
 
     @Override
     public void start() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("-> Welcome to " + EWalletSystem.name);
         EWalletSystem E_wallet = new EWalletSystem();
 
@@ -26,7 +26,9 @@ public class ApplicationServiceImpl implements ApplicationService {
                     choose = scanner.nextInt();
                     switch (choose) {
                         case 1:
-                            System.out.println("login feature");
+                            if(E_wallet.Login()) showUserMenu();
+                            else System.out.println("User not found - signup");
+
                             break;
 
                         case 2:
@@ -46,7 +48,7 @@ public class ApplicationServiceImpl implements ApplicationService {
                 }
                 catch (InputMismatchException e){
 
-                    System.out.println("invalid choose :(\n");
+                    System.out.println("You must choose a number:(\n");
                     System.out.println("please choose......");
                     System.out.println("1.login    2.signup     3.Exit");
                     scanner.nextLine();
@@ -57,12 +59,86 @@ public class ApplicationServiceImpl implements ApplicationService {
                     break;
                 }
 
-                if (count == 4) {
-                    System.out.println("pls contact with Admin :(");
+                if (count == 3) {
+                    System.out.println("\npls contact with Admin :(\n");
                     break;
                 }
             }
         }
     }
 
+    @Override
+    public void showUserMenu() {
+
+
+        int count = 0;
+
+        while (true) {
+            int choose;
+            System.out.println("========================================");
+            System.out.println("                user menu");
+            System.out.println("========================================");
+
+            System.out.println("please choose......");
+            System.out.println("1.Deposit    2.Withdraw     3.Transfer\n" +
+                    "4.Show account details     5.Change password     6.Logout");
+            {
+                boolean Logout = false;
+
+                try {
+                    choose = scanner.nextInt();
+                    switch (choose) {
+                        case 1:
+                            System.out.println("Deposit");
+
+                            break;
+
+                        case 2:
+                            System.out.println("Withdraw");
+                            break;
+
+                        case 3:
+                            System.out.println("Transfer");
+                            break;
+                        case 4:
+                            System.out.println("Show account details");
+                            break;
+
+                        case 5:
+                            System.out.println("Change password");
+                            break;
+
+                        case 6:
+                            System.out.println("have a nice day :)");
+                            Logout = true;
+                            break;
+
+                        default:
+                            System.out.println("invalid choose :(");
+                            count++;
+                    }
+
+                }
+                catch (InputMismatchException e){
+
+                    System.out.println("You must choose a number :(\n");
+                    System.out.println("please choose......");
+                    System.out.println("1.Deposit    2.Withdraw     3.Transfer\n" +
+                            "4.Show account details     5.Change password     6.Logout");
+                    scanner.nextLine();
+                    count++;
+                }
+
+                if (Logout) {
+                    break;
+                }
+
+                if (count == 3) {
+                    System.out.println("\npls contact with Admin :(\n");
+                    break;
+                }
+            }
+        }
+
+    }
 }

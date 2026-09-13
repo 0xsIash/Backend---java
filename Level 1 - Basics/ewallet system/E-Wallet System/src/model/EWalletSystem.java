@@ -10,18 +10,53 @@ public class EWalletSystem {
     public EWalletSystem() {
         wallet = new Wallet();
     }
+    Scanner scanner = new Scanner(System.in);
 
-    public void Login(String userName, String password){
 
-    }
+    public boolean Login() {
 
-    public void Logout(){
+        Scanner scanner = new Scanner(System.in);
+        int counter = 0;
 
+        while (counter < 3) {
+
+            System.out.print("Enter your name: ");
+            String name = scanner.nextLine();
+
+            if (name.isEmpty()) {
+                System.out.println("Username can't be empty!");
+                counter++;
+                continue;
+            }
+
+            if (wallet.checkIfNameNOTExist(name)) {
+                System.out.println("Username can't be found!");
+                counter++;
+                continue;
+            }
+
+            System.out.print("Enter your password: ");
+            String password = scanner.nextLine();
+
+            User user = wallet.authenticate(name, password);
+
+            if (user != null) {
+                System.out.println("Logged in successfully :)");
+                return true;
+            }
+
+            System.out.println("Password doesn't match!");
+            counter++;
+        }
+
+        System.out.println("\nYou have exceeded the maximum attempts.");
+        System.out.println("Please contact with Admin :(\n");
+
+        return false;
     }
 
     public void Signup(){
         int counter = 0;
-        Scanner scanner = new Scanner(System.in);
 
         String userName = "";
         String password = "";

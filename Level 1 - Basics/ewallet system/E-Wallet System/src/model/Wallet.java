@@ -6,10 +6,12 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public class Wallet {
-    private List<User> users = new ArrayList<>();
+    private final List<User> users = new ArrayList<>();
     private Admin admin;
 
     // responsibilities
+
+    // Signup validation
     public String validateName(String name){
         if(name.length() < 3){
             return "Name must be at least 3 characters long.";
@@ -88,19 +90,37 @@ public class Wallet {
         return "valid";
     }
 
-
     public void addUser(User user) {
 
         users.add(user);
         System.out.println("User has been added successfully :)");
     }
 
-    public User authenticate(String userName, String password){
-        return null;
+
+    // Login validation
+    public boolean checkIfNameNOTExist(String name){
+
+
+        Predicate<User> checkName = n -> Objects.equals(n.getUserName(), name);
+        return users.stream().noneMatch(checkName);
+
     }
 
     public User findUser(String userName){
-        return null;
+
+        return users.stream().filter(n->n.getUserName().equals(userName))
+                .findAny()
+                .orElse(null);
     }
 
+    public User authenticate(String name, String password) {
+
+        User user = findUser(name);
+
+        if (user.getPassword().equals(password)) {
+            return user;
+        }
+
+        return null;
+    }
 }
