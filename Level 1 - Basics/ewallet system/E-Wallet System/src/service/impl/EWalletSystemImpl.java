@@ -146,30 +146,51 @@ public class EWalletSystemImpl implements EWalletSystem {
     }
 
     public void deposit(Account account){
-        int counter = 0;
-        while (counter<3){
             try{
                 System.out.print("Enter value: ");
                 int value = scanner.nextInt();
                 if (value <= 0) {
                     System.out.println("Invalid value. Must be grater than zero");
-                    counter++;
                 }
 
                 else {
                     accountService.deposit(value, account);
                     System.out.println("Your deposit has been done successfully :)");
-                    break;
                 }
             }
             catch (InputMismatchException e){
                 System.out.println("Invalid value. Must be grater than zero");
                 scanner.nextLine();
-                counter++;
             }finally {
                 System.out.println("your current balance is: "+account.getBalance());
             }
-        }
+
     }
 
+    public void withdraw(Account account){
+            try{
+                System.out.print("Enter value: ");
+                int value = scanner.nextInt();
+
+                if (value <= 0) {
+                    System.out.println("Invalid value. Must be grater than zero");
+                }
+
+                else if(account.getBalance() == 0 || account.getBalance()<value){
+                    System.out.println("Your current balance doesn't enough.");
+                }
+
+                else {
+                    accountService.withdraw(value, account);
+                    System.out.println("Your withdraw has been done successfully :)");
+                }
+            }
+            catch (InputMismatchException e){
+                System.out.println("Invalid value. Must be grater than zero");
+                scanner.nextLine();
+            }finally {
+                System.out.println("your current balance is: "+account.getBalance());
+            }
+
+    }
 }

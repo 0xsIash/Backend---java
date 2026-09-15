@@ -60,9 +60,6 @@ public class Account {
 
     // responsibilities
 
-    public void withdraw(double value){
-
-    }
 
     public void changePassword(String newPassword){
 

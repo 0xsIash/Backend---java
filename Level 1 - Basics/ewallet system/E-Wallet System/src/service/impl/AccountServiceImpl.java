@@ -129,4 +129,8 @@ public class AccountServiceImpl implements AccountService {
         account.setBalance(account.getBalance() + value);
     }
 
+    public void withdraw(double value, Account account){
+        account.setBalance(account.getBalance() - value);
+    }
+
 }

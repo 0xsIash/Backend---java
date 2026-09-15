@@ -26,4 +26,5 @@ public interface AccountService {
 
     // user functionality
     public void deposit(double value, Account account);
+    public void withdraw(double value, Account account);
 }

@@ -91,13 +91,18 @@ public class ApplicationServiceImpl implements ApplicationService {
                     choose = scanner.nextInt();
                     switch (choose) {
                         case 1:
-                            System.out.println("Deposit\n==========");
+                            System.out.println("=======");
+                            System.out.println("Deposit");
+                            System.out.println("=======");
                             E_wallet.deposit(account);
 
                             break;
 
                         case 2:
+                            System.out.println("========");
                             System.out.println("Withdraw");
+                            System.out.println("========");
+                            E_wallet.withdraw(account);
                             break;
 
                         case 3:
