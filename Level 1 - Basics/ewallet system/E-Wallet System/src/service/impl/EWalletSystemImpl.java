@@ -1,15 +1,16 @@
-package model;
+package service.impl;
+
+import model.Account;
+import service.AccountService;
+import service.EWalletSystem;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class EWalletSystem {
-    private final Wallet wallet;
+public class EWalletSystemImpl implements EWalletSystem {
     public final static String name = "EraaSoft Wallet";
+    private final AccountService accountService = new AccountServiceImpl();
 
-    public EWalletSystem() {
-        wallet = new Wallet();
-    }
     Scanner scanner = new Scanner(System.in);
 
 
@@ -29,7 +30,7 @@ public class EWalletSystem {
                 continue;
             }
 
-            if (wallet.checkIfNameNOTExist(name)) {
+            if (accountService.checkIfNameNOTExist(name)) {
                 System.out.println("Username can't be found!");
                 counter++;
                 continue;
@@ -38,9 +39,9 @@ public class EWalletSystem {
             System.out.print("Enter your password: ");
             String password = scanner.nextLine();
 
-            User user = wallet.authenticate(name, password);
+            Account account = accountService.authenticate(name, password);
 
-            if (user != null) {
+            if (account != null) {
                 System.out.println("Logged in successfully :)");
                 return true;
             }
@@ -68,9 +69,9 @@ public class EWalletSystem {
         while (counter < 3) {
 
             System.out.print("Enter your name: ");
-            userName = scanner.next();
+            userName = scanner.nextLine();
 
-            String result = wallet.validateName(userName);
+            String result = accountService.validateName(userName);
 
             if (result.equals("valid")) {
                 break;
@@ -83,9 +84,9 @@ public class EWalletSystem {
         while (counter < 3) {
 
             System.out.print("Enter your password: ");
-            password = scanner.next();
+            password = scanner.nextLine();
 
-            String result = wallet.validatePassword(password);
+            String result = accountService.validatePassword(password);
 
             if (result.equals("valid")) {
                 break;
@@ -103,7 +104,7 @@ public class EWalletSystem {
             try {
                 age = scanner.nextInt();
 
-                String result = wallet.validateAge(age);
+                String result = accountService.validateAge(age);
 
                 if (result.equals("valid")) {
                     break;
@@ -124,7 +125,7 @@ public class EWalletSystem {
             System.out.print("Enter your phone number: ");
             phoneNumber = scanner.next();
 
-            String result = wallet.validatePhoneNumber(phoneNumber);
+            String result = accountService.validatePhoneNumber(phoneNumber);
 
             if (result.equals("valid")) {
                 break;
@@ -136,8 +137,8 @@ public class EWalletSystem {
 
 
         if (counter < 3){
-            User user = new User(userName, password, age, phoneNumber);
-            wallet.addUser(user);
+            Account account = new Account(userName, password, age, phoneNumber);
+            accountService.addAccount(account);
         }
         else {
             System.out.println("\npls contact with Admin :(\n");

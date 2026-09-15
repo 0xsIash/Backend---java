@@ -1,7 +1,7 @@
 package service.impl;
 
-import model.EWalletSystem;
 import service.ApplicationService;
+import service.EWalletSystem;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -11,8 +11,8 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public void start() {
-        System.out.println("-> Welcome to " + EWalletSystem.name);
-        EWalletSystem E_wallet = new EWalletSystem();
+        System.out.println("-> Welcome to " + EWalletSystemImpl.name);
+        EWalletSystem E_wallet = new EWalletSystemImpl();
 
         int count = 0;
 
@@ -27,7 +27,7 @@ public class ApplicationServiceImpl implements ApplicationService {
                     switch (choose) {
                         case 1:
                             if(E_wallet.Login()) showUserMenu();
-                            else System.out.println("User not found - signup");
+                            else System.out.println("Account not found - signup");
 
                             break;
 
