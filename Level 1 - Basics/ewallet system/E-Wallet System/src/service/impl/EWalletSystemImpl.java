@@ -14,7 +14,7 @@ public class EWalletSystemImpl implements EWalletSystem {
     Scanner scanner = new Scanner(System.in);
 
 
-    public boolean Login() {
+    public Account Login() {
 
         Scanner scanner = new Scanner(System.in);
         int counter = 0;
@@ -43,7 +43,7 @@ public class EWalletSystemImpl implements EWalletSystem {
 
             if (account != null) {
                 System.out.println("Logged in successfully :)");
-                return true;
+                return accountService.findAccount(name);
             }
 
             System.out.println("Password doesn't match!");
@@ -53,7 +53,7 @@ public class EWalletSystemImpl implements EWalletSystem {
         System.out.println("\nYou have exceeded the maximum attempts.");
         System.out.println("Please contact with Admin :(\n");
 
-        return false;
+        return null;
     }
 
     public void Signup(){
@@ -144,4 +144,32 @@ public class EWalletSystemImpl implements EWalletSystem {
             System.out.println("\npls contact with Admin :(\n");
         }
     }
+
+    public void deposit(Account account){
+        int counter = 0;
+        while (counter<3){
+            try{
+                System.out.print("Enter value: ");
+                int value = scanner.nextInt();
+                if (value <= 0) {
+                    System.out.println("Invalid value. Must be grater than zero");
+                    counter++;
+                }
+
+                else {
+                    accountService.deposit(value, account);
+                    System.out.println("Your deposit has been done successfully :)");
+                    break;
+                }
+            }
+            catch (InputMismatchException e){
+                System.out.println("Invalid value. Must be grater than zero");
+                scanner.nextLine();
+                counter++;
+            }finally {
+                System.out.println("your current balance is: "+account.getBalance());
+            }
+        }
+    }
+
 }

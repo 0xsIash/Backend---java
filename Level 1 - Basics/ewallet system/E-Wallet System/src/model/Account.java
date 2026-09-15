@@ -7,6 +7,10 @@ public class Account {
     private double balance = 0;
     private int age;
 
+    public Account(){
+        // default constructor
+    }
+
     public Account(String name, String password, int age, String phoneNumber){
         this.userName = name;
         this.password = password;
@@ -55,10 +59,6 @@ public class Account {
     }
 
     // responsibilities
-
-    public void deposit(double value){
-
-    }
 
     public void withdraw(double value){
 

@@ -124,4 +124,9 @@ public class AccountServiceImpl implements AccountService {
         return null;
     }
 
+    // user functionality
+    public void deposit(double value, Account account){
+        account.setBalance(account.getBalance() + value);
+    }
+
 }

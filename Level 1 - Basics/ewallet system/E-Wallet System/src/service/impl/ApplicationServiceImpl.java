@@ -1,5 +1,6 @@
 package service.impl;
 
+import model.Account;
 import service.ApplicationService;
 import service.EWalletSystem;
 
@@ -8,12 +9,12 @@ import java.util.Scanner;
 
 public class ApplicationServiceImpl implements ApplicationService {
     Scanner scanner = new Scanner(System.in);
+    EWalletSystem E_wallet = new EWalletSystemImpl();
+    Account account = new Account();
 
     @Override
     public void start() {
         System.out.println("-> Welcome to " + EWalletSystemImpl.name);
-        EWalletSystem E_wallet = new EWalletSystemImpl();
-
         int count = 0;
 
         while (true) {
@@ -26,7 +27,8 @@ public class ApplicationServiceImpl implements ApplicationService {
                     choose = scanner.nextInt();
                     switch (choose) {
                         case 1:
-                            if(E_wallet.Login()) showUserMenu();
+                            account = E_wallet.Login();
+                            if(account != null) showUserMenu();
                             else System.out.println("Account not found - signup");
 
                             break;
@@ -89,7 +91,8 @@ public class ApplicationServiceImpl implements ApplicationService {
                     choose = scanner.nextInt();
                     switch (choose) {
                         case 1:
-                            System.out.println("Deposit");
+                            System.out.println("Deposit\n==========");
+                            E_wallet.deposit(account);
 
                             break;
 
