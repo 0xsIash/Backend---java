@@ -1,13 +1,13 @@
 package model;
 
-public class User {
+public class Account {
     private String userName;
     private String password;
     private String phoneNumber;
     private double balance = 0;
     private int age;
 
-    public User(String name, String password, int age, String phoneNumber){
+    public Account(String name, String password, int age, String phoneNumber){
         this.userName = name;
         this.password = password;
         this.age = age;
