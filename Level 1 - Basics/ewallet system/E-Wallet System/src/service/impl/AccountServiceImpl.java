@@ -137,4 +137,9 @@ public class AccountServiceImpl implements AccountService {
         senderAccount.setBalance(senderAccount.getBalance() - value);
         reciverAccount.setBalance(reciverAccount.getBalance() + value);
     }
+
+    public void changePassword(String newPassword, Account account){
+        account.setPassword(newPassword);
+    }
+
 }

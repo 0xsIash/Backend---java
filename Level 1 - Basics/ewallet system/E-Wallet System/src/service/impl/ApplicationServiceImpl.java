@@ -50,10 +50,8 @@ public class ApplicationServiceImpl implements ApplicationService {
                 }
                 catch (InputMismatchException e){
 
-                    System.out.println("You must choose a number:(\n");
-                    System.out.println("please choose......");
-                    System.out.println("1.login    2.signup     3.Exit");
                     scanner.nextLine();
+                    System.out.println("You must choose a number:(\n");
                     count++;
                 }
 
@@ -122,7 +120,10 @@ public class ApplicationServiceImpl implements ApplicationService {
                             break;
 
                         case 6:
+                            System.out.println("================");
                             System.out.println("Change password");
+                            System.out.println("================");
+                            E_wallet.changePassword(account);
                             break;
 
                         case 7:
@@ -139,9 +140,6 @@ public class ApplicationServiceImpl implements ApplicationService {
                 catch (InputMismatchException e){
 
                     System.out.println("You must choose a number :(\n");
-                    System.out.println("please choose......");
-                    System.out.println("1.Deposit    2.Withdraw     3.Transfer\n" +
-                            "4.Show account details     5.Change password     6.Logout");
                     scanner.nextLine();
                     count++;
                 }

@@ -10,4 +10,5 @@ public interface EWalletSystem {
     public void transfer(Account senderAccount);
     public double showBalance(Account account);
     public void showDetails(Account account);
+    public void changePassword(Account account);
 }

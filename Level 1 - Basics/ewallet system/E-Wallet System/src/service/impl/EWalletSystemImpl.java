@@ -39,7 +39,7 @@ public class EWalletSystemImpl implements EWalletSystem {
             }
 
             System.out.print("Enter your password: ");
-            String password = scanner.nextLine();
+            String password = scanner.next();
 
             Account account = accountService.authenticate(name, password);
 
@@ -86,7 +86,7 @@ public class EWalletSystemImpl implements EWalletSystem {
         while (counter < 3) {
 
             System.out.print("Enter your password: ");
-            password = scanner.nextLine();
+            password = scanner.next();
 
             String result = accountService.validatePassword(password);
 
@@ -236,16 +236,10 @@ public class EWalletSystemImpl implements EWalletSystem {
                 System.out.println("Invalid value. Must be grater than zero");
                 scanner.nextLine();
             }
-
-
-
-
         }
         else {
             System.out.println("User can't be found!");
         }
-
-
     }
 
     public double showBalance(Account account){
@@ -259,5 +253,36 @@ public class EWalletSystemImpl implements EWalletSystem {
         System.out.println("|Balance: "+account.getBalance()+"\t\t\t    |");
         System.out.println("|Age: "+account.getAge()+"\t\t\t\t    |");
         System.out.println("|---------------------------|");
+    }
+
+    public void changePassword(Account account){
+        System.out.print("Enter old password: ");
+        String oldPassword = scanner.next();
+
+        boolean isMatched = oldPassword.equals(account.getPassword());
+
+        if(isMatched){
+            System.out.print("Enter new password: ");
+            String newPassword = scanner.next();
+            System.out.print("Confirm password: ");
+            String confPass = scanner.next();
+
+            boolean isConfirmed = newPassword.equals(confPass);
+
+            if(oldPassword.equals(newPassword)){
+                System.out.println("It's the same old password!");
+            }
+
+            else if(isConfirmed){
+                account.setPassword(newPassword);
+                System.out.println("Password changed successfully :)");
+            }
+            else{
+                System.out.println("Password doesn't match");
+            }
+        }
+        else {
+            System.out.println("Password isn't correct");
+        }
     }
 }
