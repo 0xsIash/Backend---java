@@ -133,4 +133,9 @@ public class AccountServiceImpl implements AccountService {
         account.setBalance(account.getBalance() - value);
     }
 
+    public void transfer(double value, Account senderAccount, Account reciverAccount){
+        senderAccount.setBalance(senderAccount.getBalance() - value);
+        reciverAccount.setBalance(reciverAccount.getBalance() + value);
+    }
+
 }

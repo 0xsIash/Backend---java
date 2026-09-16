@@ -69,9 +69,6 @@ public class Account {
 
     }
 
-    public void transfer(double value, String userName){
-
-    }
 
     public void receive(double value){
 

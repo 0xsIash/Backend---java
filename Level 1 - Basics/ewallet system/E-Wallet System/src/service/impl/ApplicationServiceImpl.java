@@ -106,7 +106,10 @@ public class ApplicationServiceImpl implements ApplicationService {
                             break;
 
                         case 3:
+                            System.out.println("========");
                             System.out.println("Transfer");
+                            System.out.println("========");
+                            E_wallet.transfer(account);
                             break;
                         case 4:
                             System.out.println("Show account details");

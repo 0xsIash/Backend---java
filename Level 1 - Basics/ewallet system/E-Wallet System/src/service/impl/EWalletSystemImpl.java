@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class EWalletSystemImpl implements EWalletSystem {
     public final static String name = "EraaSoft Wallet";
     private final AccountService accountService = new AccountServiceImpl();
+    int value=0;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -148,7 +149,7 @@ public class EWalletSystemImpl implements EWalletSystem {
     public void deposit(Account account){
             try{
                 System.out.print("Enter value: ");
-                int value = scanner.nextInt();
+                value = scanner.nextInt();
                 if (value <= 0) {
                     System.out.println("Invalid value. Must be grater than zero");
                 }
@@ -156,13 +157,12 @@ public class EWalletSystemImpl implements EWalletSystem {
                 else {
                     accountService.deposit(value, account);
                     System.out.println("Your deposit has been done successfully :)");
+                    System.out.println("your current balance is: "+account.getBalance());
                 }
             }
             catch (InputMismatchException e){
                 System.out.println("Invalid value. Must be grater than zero");
                 scanner.nextLine();
-            }finally {
-                System.out.println("your current balance is: "+account.getBalance());
             }
 
     }
@@ -170,7 +170,7 @@ public class EWalletSystemImpl implements EWalletSystem {
     public void withdraw(Account account){
             try{
                 System.out.print("Enter value: ");
-                int value = scanner.nextInt();
+                value = scanner.nextInt();
 
                 if (value <= 0) {
                     System.out.println("Invalid value. Must be grater than zero");
@@ -178,19 +178,37 @@ public class EWalletSystemImpl implements EWalletSystem {
 
                 else if(account.getBalance() == 0 || account.getBalance()<value){
                     System.out.println("Your current balance doesn't enough.");
+                    System.out.println("your current balance is: "+account.getBalance());
                 }
 
                 else {
                     accountService.withdraw(value, account);
                     System.out.println("Your withdraw has been done successfully :)");
+                    System.out.println("your current balance is: "+account.getBalance());
                 }
             }
             catch (InputMismatchException e){
                 System.out.println("Invalid value. Must be grater than zero");
                 scanner.nextLine();
-            }finally {
-                System.out.println("your current balance is: "+account.getBalance());
             }
+
+    }
+
+    public void transfer(Account senderAccount){
+        scanner.nextLine();
+        System.out.print("Enter receiver username: ");
+        String userName = scanner.nextLine();
+        // check if receiver username is existed
+        boolean isExist = !accountService.checkIfNameNOTExist(userName);
+        if(isExist){
+            Account receiverAccount = accountService.findAccount(userName);
+            withdraw(senderAccount);
+            accountService.deposit(value,receiverAccount);
+        }
+        else {
+            System.out.println("User can't be found!");
+        }
+
 
     }
 }
