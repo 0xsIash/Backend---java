@@ -61,8 +61,6 @@ public class Account {
     // responsibilities
 
 
-    public void changePassword(String newPassword){
 
-    }
 
 }

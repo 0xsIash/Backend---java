@@ -5,6 +5,7 @@ import service.AccountService;
 import service.EWalletSystem;
 
 import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class EWalletSystemImpl implements EWalletSystem {
@@ -198,12 +199,47 @@ public class EWalletSystemImpl implements EWalletSystem {
         scanner.nextLine();
         System.out.print("Enter receiver username: ");
         String userName = scanner.nextLine();
-        // check if receiver username is existed
+
         boolean isExist = !accountService.checkIfNameNOTExist(userName);
-        if(isExist){
+
+        // check if user transfer money to himself
+        if(Objects.equals(userName, senderAccount.getUserName())){
+            System.out.println("can't transfer money to yourself!");
+        }
+
+        // check if receiver username is existed
+        else if(isExist){
             Account receiverAccount = accountService.findAccount(userName);
-            withdraw(senderAccount);
-            accountService.deposit(value,receiverAccount);
+
+            // transfer money from sender account
+            try{
+                System.out.print("Enter value: ");
+                value = scanner.nextInt();
+
+                if (value <= 0) {
+                    System.out.println("Invalid value. Must be grater than zero");
+                }
+
+                else if(senderAccount.getBalance() == 0 || senderAccount.getBalance()<value){
+                    System.out.println("Your current balance doesn't enough.");
+                    System.out.println("your current balance is: "+senderAccount.getBalance());
+                }
+
+                else {
+                    accountService.withdraw(value, senderAccount);
+                    accountService.deposit(value,receiverAccount);
+                    System.out.println("operation has been done successfully :)");
+                    System.out.println("your current balance is: "+senderAccount.getBalance());
+                }
+            }
+            catch (InputMismatchException e){
+                System.out.println("Invalid value. Must be grater than zero");
+                scanner.nextLine();
+            }
+
+
+
+
         }
         else {
             System.out.println("User can't be found!");
