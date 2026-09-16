@@ -82,8 +82,8 @@ public class ApplicationServiceImpl implements ApplicationService {
             System.out.println("========================================");
 
             System.out.println("please choose......");
-            System.out.println("1.Deposit    2.Withdraw     3.Transfer\n" +
-                    "4.Show account details     5.Change password     6.Logout");
+            System.out.println("1.Deposit    2.Withdraw     3.Transfer     4.Show balance\n" +
+                    "5.Show account details     6.Change password     7.Logout");
             {
                 boolean Logout = false;
 
@@ -112,14 +112,19 @@ public class ApplicationServiceImpl implements ApplicationService {
                             E_wallet.transfer(account);
                             break;
                         case 4:
+                            System.out.println("================");
+                            System.out.println("Your balance is: "+E_wallet.showBalance(account));
+                            System.out.println("================");
+                            break;
+                        case 5:
                             System.out.println("Show account details");
                             break;
 
-                        case 5:
+                        case 6:
                             System.out.println("Change password");
                             break;
 
-                        case 6:
+                        case 7:
                             System.out.println("have a nice day :)");
                             Logout = true;
                             break;

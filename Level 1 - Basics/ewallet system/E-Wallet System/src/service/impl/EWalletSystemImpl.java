@@ -156,7 +156,7 @@ public class EWalletSystemImpl implements EWalletSystem {
 
                 else {
                     accountService.deposit(value, account);
-                    System.out.println("Your deposit has been done successfully :)");
+                    System.out.println("operation has been done successfully :)");
                     System.out.println("your current balance is: "+account.getBalance());
                 }
             }
@@ -183,7 +183,7 @@ public class EWalletSystemImpl implements EWalletSystem {
 
                 else {
                     accountService.withdraw(value, account);
-                    System.out.println("Your withdraw has been done successfully :)");
+                    System.out.println("operation has been done successfully :)");
                     System.out.println("your current balance is: "+account.getBalance());
                 }
             }
@@ -210,5 +210,9 @@ public class EWalletSystemImpl implements EWalletSystem {
         }
 
 
+    }
+
+    public double showBalance(Account account){
+        return account.getBalance();
     }
 }

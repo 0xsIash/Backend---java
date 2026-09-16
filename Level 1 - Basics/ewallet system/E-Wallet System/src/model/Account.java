@@ -69,8 +69,4 @@ public class Account {
 
     }
 
-
-    public void receive(double value){
-
-    }
 }
