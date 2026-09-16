@@ -112,12 +112,13 @@ public class ApplicationServiceImpl implements ApplicationService {
                             E_wallet.transfer(account);
                             break;
                         case 4:
-                            System.out.println("================");
+                            System.out.println("=====================");
                             System.out.println("Your balance is: "+E_wallet.showBalance(account));
-                            System.out.println("================");
+                            System.out.println("=====================");
                             break;
                         case 5:
-                            System.out.println("Show account details");
+                            System.out.println("Account Details");
+                            E_wallet.showDetails(account);
                             break;
 
                         case 6:

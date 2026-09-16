@@ -65,8 +65,4 @@ public class Account {
 
     }
 
-    public void details(){
-
-    }
-
 }

@@ -9,4 +9,5 @@ public interface EWalletSystem {
     public void withdraw(Account account);
     public void transfer(Account senderAccount);
     public double showBalance(Account account);
+    public void showDetails(Account account);
 }

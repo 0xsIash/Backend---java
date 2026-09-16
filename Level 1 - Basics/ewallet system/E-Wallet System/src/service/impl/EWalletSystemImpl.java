@@ -215,4 +215,13 @@ public class EWalletSystemImpl implements EWalletSystem {
     public double showBalance(Account account){
         return account.getBalance();
     }
+
+    public void showDetails(Account account){
+        System.out.println("|---------------------------|");
+        System.out.println("|Name: "+account.getUserName()+"\t\t\t\t    |");
+        System.out.println("|Phone Number: "+account.getPhoneNumber()+"  |");
+        System.out.println("|Balance: "+account.getBalance()+"\t\t\t    |");
+        System.out.println("|Age: "+account.getAge()+"\t\t\t\t    |");
+        System.out.println("|---------------------------|");
+    }
 }
