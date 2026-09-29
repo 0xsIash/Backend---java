@@ -9,7 +9,16 @@ import java.util.function.Predicate;
 
 public class AccountServiceImpl implements AccountService {
 
-    private final Wallet wallet = new Wallet();
+    private final Wallet wallet ;
+
+    AccountServiceImpl(){
+        wallet = new Wallet();
+    }
+
+    @Override
+    public Wallet getWallet(){
+        return wallet;
+    }
 
     // Signup validation
     public String validateName(String name){

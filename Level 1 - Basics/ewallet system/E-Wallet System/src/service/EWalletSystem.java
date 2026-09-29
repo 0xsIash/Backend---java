@@ -11,4 +11,9 @@ public interface EWalletSystem {
     public double showBalance(Account account);
     public void showDetails(Account account);
     public void changePassword(Account account);
+
+    public boolean adminLogin();
+    public void inActiveUser();
+    public void activeUser();
+    public void deleteUser();
 }

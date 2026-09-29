@@ -1,8 +1,11 @@
 package service;
 
 import model.Account;
+import model.Wallet;
 
 public interface AccountService {
+
+    public Wallet getWallet();
 
     // Signup validation
     String validateName(String name);

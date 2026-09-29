@@ -6,14 +6,14 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public class Wallet {
-    private List<Account> accounts = new ArrayList<>();
+    private ArrayList<Account> accounts = new ArrayList<>();
     private Admin admin;
 
-    public List<Account> getAccounts() {
+    public ArrayList<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(List<Account> accounts) {
+    public void setAccounts(ArrayList<Account> accounts) {
         this.accounts = accounts;
     }
 }

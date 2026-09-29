@@ -6,6 +6,7 @@ public class Account {
     private String phoneNumber;
     private double balance = 0;
     private int age;
+    private boolean isActive = true;
 
     public Account(){
         // default constructor
@@ -58,8 +59,13 @@ public class Account {
         return age;
     }
 
-    // responsibilities
+    public boolean isActive() {
+        return isActive;
+    }
 
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
 
 

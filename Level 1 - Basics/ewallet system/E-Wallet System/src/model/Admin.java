@@ -1,14 +1,14 @@
 package model;
 
 public class Admin {
-    private String password;
-    private String userName;
+    private final String userName = "IAM";
+    private final String password = "IAM123";
 
-    public void deleteAccount(String name){
-
+    public String getPassword() {
+        return password;
     }
 
-    public void inActiveeAccount(String name){
-
+    public String getUserName(){
+        return userName;
     }
 }
