@@ -292,7 +292,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
             System.out.println(
                     "1.Deposit    2.Withdraw     3.Transfer     4.Show balance\n" +
-                            "5.Show account details     6.Change password     7.Logout"
+                            "5.Show account details     6.Change password     7.History     8.Logout"
             );
 
             try {
@@ -367,8 +367,16 @@ public class ApplicationServiceImpl implements ApplicationService {
 
                         break;
 
-
                     case 7:
+                        System.out.println("================");
+                        System.out.println("  User History  ");
+                        System.out.println("================");
+
+                        E_wallet.showHistory(account);
+                        break;
+
+
+                    case 8:
 
                         System.out.println("have a nice day :)");
                         return;

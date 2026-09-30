@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Account {
     private String userName;
     private String password;
@@ -7,6 +9,7 @@ public class Account {
     private double balance = 0;
     private int age;
     private boolean isActive = true;
+    private ArrayList<String> history = new ArrayList<String>();
 
     public Account(){
         // default constructor
@@ -67,6 +70,11 @@ public class Account {
         isActive = active;
     }
 
+    public void addToHistory(String transaction ){
+        history.add(transaction );
+    }
 
-
+    public ArrayList<String> getHistory() {
+        return history;
+    }
 }

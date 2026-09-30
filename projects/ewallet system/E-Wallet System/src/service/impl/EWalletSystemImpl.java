@@ -1,7 +1,6 @@
 package service.impl;
 import model.Account;
 import model.Admin;
-import model.Wallet;
 import service.AccountService;
 import service.AdminService;
 import service.EWalletSystem;
@@ -186,6 +185,9 @@ public class EWalletSystemImpl implements EWalletSystem {
                     accountService.deposit(value, account);
                     System.out.println("operation has been done successfully :)");
                     System.out.println("your current balance is: " + account.getBalance());
+
+                    // add to history
+                    account.addToHistory("Deposit "+value);
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid value. Must be grater than 100");
@@ -215,6 +217,9 @@ public class EWalletSystemImpl implements EWalletSystem {
                     accountService.withdraw(value, account);
                     System.out.println("operation has been done successfully :)");
                     System.out.println("your current balance is: " + account.getBalance());
+
+                    // add to history
+                    account.addToHistory("Withdraw "+value);
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid value. Must be > 0 and < 4000");
@@ -261,6 +266,10 @@ public class EWalletSystemImpl implements EWalletSystem {
                     accountService.deposit(value,receiverAccount);
                     System.out.println("operation has been done successfully :)");
                     System.out.println("your current balance is: "+senderAccount.getBalance());
+
+                    // add to history
+                    senderAccount.addToHistory("Transfer "+value+" to "+receiverAccount.getUserName());
+                    receiverAccount.addToHistory("Received "+value+" from "+senderAccount.getUserName());
                 }
             }
             catch (InputMismatchException e){
@@ -383,6 +392,14 @@ public class EWalletSystemImpl implements EWalletSystem {
         }
         else {
             System.out.println("Account not found");
+        }
+    }
+
+    public void showHistory(Account account){
+        if(account.getHistory().isEmpty()){
+            System.out.println("No transactions found.");
+        }else {
+            account.getHistory().forEach(transaction -> System.out.println(transaction));
         }
     }
 }

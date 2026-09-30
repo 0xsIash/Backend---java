@@ -16,4 +16,6 @@ public interface EWalletSystem {
     public void inActiveUser();
     public void activeUser();
     public void deleteUser();
+
+    public void showHistory(Account account);
 }
