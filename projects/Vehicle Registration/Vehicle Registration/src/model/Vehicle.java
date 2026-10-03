@@ -9,7 +9,7 @@ public abstract class Vehicle {
 
 
     public Vehicle(String plateNumber, String ownerName, String vehicleType, int regestrationYear, String status) {
-        this.plateNumber = plateNumber;
+        this.plateNumber = plateNumber.toUpperCase();
         this.ownerName = ownerName;
         this.vehicleType = vehicleType;
         this.regestrationYear = regestrationYear;
@@ -18,6 +18,10 @@ public abstract class Vehicle {
 
     public String getStatus() {
         return status;
+    }
+
+    public void setStatus(String status){
+        this.status = status;
     }
 
     public int getRegestrationYear() {
