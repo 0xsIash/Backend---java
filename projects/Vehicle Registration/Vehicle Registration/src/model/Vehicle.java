@@ -1,19 +1,19 @@
 package model;
 
 public abstract class Vehicle {
-    private  String plateNumber;
+    private final String plateNumber;
     private String ownerName;
-    private String vehicleType;
-    private int regestrationYear;
+    private final String vehicleType;
+    private final int registrationYear;
     private String status;
 
 
-    public Vehicle(String plateNumber, String ownerName, String vehicleType, int regestrationYear, String status) {
+    public Vehicle(String plateNumber, String ownerName, String vehicleType, int registrationYear, String status) {
         this.plateNumber = plateNumber.toUpperCase();
         this.ownerName = ownerName;
         this.vehicleType = vehicleType;
-        this.regestrationYear = regestrationYear;
-        this.status = status;
+        this.registrationYear = registrationYear;
+        this.status = status.toUpperCase();
     }
 
     public String getStatus() {
@@ -24,8 +24,8 @@ public abstract class Vehicle {
         this.status = status;
     }
 
-    public int getRegestrationYear() {
-        return regestrationYear;
+    public int getRegistrationYear() {
+        return registrationYear;
     }
 
     public String getVehicleType() {
@@ -47,7 +47,7 @@ public abstract class Vehicle {
 
     @Override
     public String toString() {
-        return "["+plateNumber+"] | "+vehicleType+" | Owner: "+ownerName+" | Year: "+regestrationYear+" | Status: "+status;
+        return "\n["+plateNumber+"] | "+vehicleType+" | Owner: "+ownerName+" | Year: "+registrationYear+" | Status: "+status;
     }
 
     public abstract String getRegistrationLabel();

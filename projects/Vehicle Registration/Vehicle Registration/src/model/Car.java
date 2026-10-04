@@ -1,7 +1,7 @@
 package model;
 
 public class Car extends Vehicle{
-    private int numberOfDoors = 4;
+    private int numberOfDoors ;
 
     public Car(String plateNumber, String ownerName, String vehicleType, int regestrationYear, String status, int numberOfDoors) {
         super(plateNumber, ownerName, vehicleType, regestrationYear, status);
