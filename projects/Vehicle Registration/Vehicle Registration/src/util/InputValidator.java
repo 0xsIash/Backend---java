@@ -36,12 +36,12 @@ public class InputValidator {
 
     public void validateStatus(String status){
         if (status == null || status.isEmpty()) {
-            throw new InvalidInputException("Status must be ACTIVE/INACTIVE");
+            throw new InvalidInputException("Status must be ACTIVE/EXPIRED");
         }
 
         if (!status.equalsIgnoreCase("active")
-                && !status.equalsIgnoreCase("inactive")) {
-            throw new InvalidInputException("Status must be ACTIVE/INACTIVE");
+                && !status.equalsIgnoreCase("expired")) {
+            throw new InvalidInputException("Status must be ACTIVE/EXPIRED");
         }
     }
 

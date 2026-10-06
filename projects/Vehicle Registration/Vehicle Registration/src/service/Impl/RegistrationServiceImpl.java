@@ -49,28 +49,27 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     // delete a vehicle
     public boolean deleteVehicle(String plate){
-        try {
-            Vehicle v = findByPlate(plate);
+        Vehicle v = findByPlate(plate);
+        if(v != null) {
             vehicleList.remove(v);
             plateIndex.remove(plate.toUpperCase());
             registeredPlates.remove(plate.toUpperCase());
             return true;
-        }catch (VehicleNotFoundException e){
-            System.out.println(e.getMessage());
-            return false;
         }
+
+        return false;
+
     }
 
     // update owner name
     public boolean updateOwner(String plate, String newOwner){
-        try {
-            Vehicle v = findByPlate(plate);
+        Vehicle v = findByPlate(plate);
+        if(v != null) {
             v.setOwnerName(newOwner);
             return true;
-        }catch (VehicleNotFoundException e){
-            System.out.println(e.getMessage());
-            return false;
         }
+
+        return false;
     }
 
     // get all vehicles
@@ -103,4 +102,30 @@ public class RegistrationServiceImpl implements RegistrationService {
         if (!ascending) comp = comp.reversed();
         return vehicleList.stream().sorted(comp).collect(Collectors.toList());
     }
+
+    // Statistics
+
+    public IntSummaryStatistics summaryStatistics(){
+        return vehicleList.stream()
+                .mapToInt(Vehicle::getRegistrationYear)
+                .summaryStatistics();
+
+    }
+
+    public Map<String, Long> getVehiclesByType(){
+        return vehicleList.stream()
+                .collect(Collectors.groupingBy(
+                        v -> v.getVehicleType().toLowerCase(),
+                        Collectors.counting()
+                ));
+    }
+
+    public Map<Boolean, Long> getVehiclesByStatus(){
+        return vehicleList.stream()
+                .collect(Collectors.partitioningBy(
+                        v -> v.getStatus().equals("ACTIVE"),
+                        Collectors.counting()));
+    }
+
+
 }

@@ -2,16 +2,21 @@ package service;
 
 import model.Vehicle;
 
+import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 
 public interface RegistrationService {
-    public boolean registerVehicle(Vehicle v);
-    public Vehicle findByPlate(String plate);
-    public boolean deleteVehicle(String plate);
-    public boolean updateOwner(String plate, String newOwner);
-    public List<Vehicle> getAllVehicles();
-    public List<Vehicle> filterByType(String type);
-    public List<Vehicle> getVehiclesByOwner(String ownerName);
-    public List<Vehicle> getExpiredRegistrations(int currentYear);
-    public List<Vehicle> getSortedByYear(boolean ascending);
+    boolean registerVehicle(Vehicle v);
+    Vehicle findByPlate(String plate);
+    boolean deleteVehicle(String plate);
+    boolean updateOwner(String plate, String newOwner);
+    List<Vehicle> getAllVehicles();
+    List<Vehicle> filterByType(String type);
+    List<Vehicle> getVehiclesByOwner(String ownerName);
+    List<Vehicle> getExpiredRegistrations(int currentYear);
+    List<Vehicle> getSortedByYear(boolean ascending);
+    IntSummaryStatistics summaryStatistics();
+    Map<String, Long> getVehiclesByType();
+    Map<Boolean, Long> getVehiclesByStatus();
 }

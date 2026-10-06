@@ -3,10 +3,16 @@ package service;
 import model.Vehicle;
 
 public interface ApplicationService {
-    public boolean register();
-    public Vehicle searchByPlate();
-    public void updateOwnerName();
-    public void deleteVehicle();
-    public void listVehicles();
+    boolean register();
+    Vehicle searchByPlate();
+    void updateOwnerName();
+    void deleteVehicle();
+    void listVehicles();
+    void filterByType();
+    void ownerHistory();
+    void expiredRegistrations();
+    void printStatistics();
+    void loadVehicles();
+
 
 }

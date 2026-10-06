@@ -1,9 +1,16 @@
+import model.Car;
+import model.Motorcycle;
+import model.Truck;
 import model.Vehicle;
 import service.Impl.ApplicationServiceImpl;
+import service.Impl.RegistrationServiceImpl;
+import service.RegistrationService;
 
 void main() {
     Scanner scanner = new Scanner(System.in);
     ApplicationServiceImpl service = new ApplicationServiceImpl(scanner);
+
+
     int count = 0;
     System.out.println("====================================");
     System.out.println("VEHICLE REGISTRATION SYSTEM  v1.0");
@@ -51,13 +58,20 @@ void main() {
                     service.listVehicles();
                     break;
                 case 6:
-                    // filter
+                    // filter by type
+                    service.filterByType();
                     break;
                 case 7:
                     // owner history
+                    service.ownerHistory();
                     break;
                 case 8:
+                    // Expired Registrations
+                    service.expiredRegistrations();
+                    break;
+                case 9:
                     // report
+                    service.printStatistics();
                     break;
                 case 0:
                     System.out.println("Have a nice day :)");
