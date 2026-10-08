@@ -1,0 +1,34 @@
+CREATE TABLE Doctor (
+	id NUMBER(3)  NOT NULL,
+	name varchar2(50) DEFAULT 'No Name',
+	salary NUMBER(6) NOT NULL,
+	address varchar2(50) DEFAULT 'No Address'
+	);
+
+INSERT INTO DOCTOR VALUES (100,'Aya',10000,'Zagazig');
+INSERT INTO DOCTOR VALUES (101, 'Ahmad', 12000, 'Cairo');
+INSERT INTO DOCTOR VALUES (102, 'Mona', 15000, 'Giza');
+INSERT INTO DOCTOR VALUES (103, 'Omar', 11000, 'Alexandria');
+INSERT INTO DOCTOR VALUES (104, 'Sara', 18000, 'Mansoura');
+INSERT INTO DOCTOR VALUES (105, 'Youssef', 13000, 'Tanta');
+INSERT INTO DOCTOR VALUES (106, 'Nour', 16000, 'Zagazig');
+INSERT INTO DOCTOR VALUES (107, 'Khaled', 14000, 'Ismailia');
+INSERT INTO DOCTOR VALUES (108, 'Salma', 2000, 'Port Said');
+INSERT INTO DOCTOR VALUES (109, 'Mahmmoud', 12500, 'Suez');
+
+
+UPDATE DOCTOR 
+SET salary = 20000
+WHERE id = 102;
+
+DELETE DOCTOR WHERE id = 108;
+
+SELECT name || ' takes salary ' || salary FROM DOCTOR ;
+
+SELECT id, name, salary*2 AS salary , address FROM DOCTOR ;
+
+SELECT * FROM DOCTOR WHERE SALARY = 1000 OR SALARY = 2000 OR SALARY = 3000;
+
+ALTER TABLE DOCTOR RENAME TO PRD_DOCTOR;
+
+
