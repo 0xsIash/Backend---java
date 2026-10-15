@@ -8,7 +8,7 @@ public class Question8 {
         List<Integer> list2 = Arrays.asList(4, 5, 6, 7, 8, 4);
 
         List<Integer> common = list1.stream()
-                .filter(list1::contains)
+                .filter(list2::contains)
                 .distinct()
                 .collect(Collectors.toList());
 
