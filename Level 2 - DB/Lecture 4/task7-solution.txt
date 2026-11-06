@@ -1,0 +1,107 @@
+CREATE TABLE customers(
+	full_name varchar(100)
+);
+
+INSERT INTO CUSTOMERS (full_name) VALUES ('  aya  ');
+INSERT INTO CUSTOMERS (full_name) VALUES ('   ali     ');
+INSERT INTO CUSTOMERS (full_name) VALUES ('     zyad   ');
+INSERT INTO CUSTOMERS (full_name) VALUES ('#     islam   ');
+
+SELECT TRIM(full_name) trimmed_text FROM customers;
+
+SELECT LTRIM(full_name) trimmed_text FROM customers;
+
+SELECT RTRIM(full_name) trimmed_text FROM customers;
+
+SELECT TRIM(BOTH '#' FROM full_name) trimmed_text FROM customers;
+---------------------------------------------------------------------
+
+SELECT REPLACE('promotion','o','0') FROM DUAL;
+
+SELECT REPLACE('This is a basic course','basic','advanced') FROM DUAL;
+
+CREATE TABLE department(
+	dept_name varchar(50)
+);
+
+INSERT INTO department (dept_name) VALUES ('IT');
+INSERT INTO department (dept_name) VALUES ('CS');
+INSERT INTO department (dept_name) VALUES ('IS');
+
+SELECT LPAD(dept_name,15,'*') FROM DEPARTMENT; 
+SELECT RPAD(dept_name,15,'*') FROM DEPARTMENT; 
+---------------------------------------------------------------------
+
+SELECT TO_CHAR(sysdate,'DD-MON-YYYY') FROM DUAL;
+
+SELECT TO_CHAR(sysdate,'Day, Month YYYY') FROM DUAL;
+
+SELECT TO_CHAR(12536.55,'999,99.99') FROM DUAL;
+
+SELECT TO_CHAR(sysdate,'YYYY/MM/DD HH24:MI:SS') FROM DUAL;
+---------------------------------------------------------------------
+
+CREATE TABLE students (
+    name VARCHAR(100),
+    score INT
+);
+
+INSERT INTO students (name, score) VALUES ('Ahmed', 95);
+INSERT INTO students (name, score) VALUES ('Sara', 88);
+INSERT INTO students (name, score) VALUES ('Mohamed', 76);
+INSERT INTO students (name, score) VALUES ('Nour', 92);
+INSERT INTO students (name, score) VALUES ('Omar', 81);
+INSERT INTO students (name, score) VALUES ('Mariam', 97);
+INSERT INTO students (name, score) VALUES ('Youssef', 85);
+
+SELECT name, score,
+	CASE
+		WHEN score >= 90 THEN 'A'
+		WHEN score >=80 AND score <= 89 THEN 'B'
+		WHEN score >= 70 AND score <=79 THEN 'C'
+		ELSE 'F'
+	END grades
+FROM students;	
+
+SELECT score,
+    CASE
+        WHEN score >= 60 THEN 'pass'
+        ELSE 'fail'
+    END AS grade
+FROM STUDENTS;
+
+
+SELECT
+    CASE TO_CHAR(SYSDATE, 'D')
+        WHEN '1' THEN 'Today is Sunday'
+        WHEN '2' THEN 'Today is Monday'
+        WHEN '3' THEN 'Today is Tuesday'
+        WHEN '4' THEN 'Today is Wednesday'
+        WHEN '5' THEN 'Today is Thursday'
+        WHEN '6' THEN 'Today is Friday'
+        WHEN '7' THEN 'Today is Saturday'
+    END AS today
+FROM DUAL;
+---------------------------------------------------------------------
+INSERT INTO students (name, score) VALUES ('malek', 100);
+INSERT INTO students (name, score) VALUES ('zain', 90);
+INSERT INTO students (name, score) VALUES ('nour', 80);
+
+SELECT DECODE(score, 100,'A',90,'B',80,'c','f') FROM STUDENTS ;
+
+CREATE TABLE status_log(
+	status_code varchar(1)
+);
+
+INSERT INTO status_log status_code VALUES ('N');
+INSERT INTO status_log status_code VALUES ('I');
+INSERT INTO status_log status_code VALUES ('C');
+
+
+SELECT DECODE(status_code,'N','New','I','In Progress','C','Completed') FROM status_log;
+
+SELECT DECODE(quantity,0,'Out of Stock','Available') FROM PRODUCT;
+
+
+
+SELECT DECODE(dept_name,'HR',500,'IT',1000,'sales',1500,300) AS bonus FROM DEPARTMENT;

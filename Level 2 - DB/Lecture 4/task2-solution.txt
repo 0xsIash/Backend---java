@@ -1,0 +1,13 @@
+SELECT REPLACE('database','a','@') rpl FROM DUAL;
+SELECT REPLACE('old','new') rpl FROM DUAL;
+
+CREATE TABLE PRODUCT (
+	product_name VARCHAR(100)
+);
+
+INSERT INTO PRODUCT product_name VALUES ('mobile');
+INSERT INTO PRODUCT product_name VALUES ('tablet');
+INSERT INTO PRODUCT product_name VALUES ('labtop');
+
+SELECT product_name, LPAD(product_name,15,'*') FROM PRODUCT;
+SELECT product_name, RPAD(product_name,15,'#') FROM PRODUCT;

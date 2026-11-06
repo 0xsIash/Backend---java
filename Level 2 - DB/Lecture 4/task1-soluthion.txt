@@ -1,0 +1,16 @@
+CREATE TABLE EMP_TEST (
+	name varchar(100)
+);
+
+INSERT INTO EMP_TEST name VALUES ('   aya  ');
+INSERT INTO EMP_TEST name VALUES ('  duaa   ');
+INSERT INTO EMP_TEST name VALUES ('    islam    ');
+INSERT INTO EMP_TEST name VALUES ('     ali  ');
+INSERT INTO EMP_TEST name VALUES ('    malek');
+INSERT INTO EMP_TEST name VALUES ('      perry   ');
+
+
+SELECT TRIM(name) trimmed_text FROM EMP_TEST;
+SELECT LTRIM(name) lift_trimmed_text FROM EMP_TEST;
+SELECT RTRIM(name) right_trimmed_text FROM EMP_TEST;
+SELECT TRIM(BOTH '*' FROM name) trimmed_name FROM EMP_TEST;

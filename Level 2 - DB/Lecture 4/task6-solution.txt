@@ -1,0 +1,19 @@
+CREATE TABLE ORDERS (
+    status CHAR(1)
+        CHECK (status IN ('P', 'S', 'D'))
+);
+
+INSERT INTO ORDERS (status) VALUES ('P');
+
+INSERT INTO ORDERS (status) VALUES ('S');
+
+INSERT INTO ORDERS (status) VALUES ('D');
+
+INSERT INTO ORDERS (status) VALUES ('P');
+
+INSERT INTO ORDERS (status) VALUES ('D');
+
+
+SELECT status,
+	DECODE(status,'P','Pending','S','Shipped','D','Delivered') AS stat
+FROM ORDERs;
